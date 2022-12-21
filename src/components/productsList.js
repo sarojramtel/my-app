@@ -41,6 +41,11 @@ const ProductsList = () => {
           : p
       )
     );
+    setEditMode(false);
+    setName("");
+    setBrand("");
+    setPrice("");
+    setSelectdProduct(null);
   };
 
   return (
