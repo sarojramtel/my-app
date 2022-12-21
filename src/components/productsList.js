@@ -7,6 +7,8 @@ const ProductsList = () => {
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState("");
+  const [selectedProduct, setSelectdProduct] = useState(null);
+  const [editMode, setEditMode] = useState(false);
 
   const addProduct = () =>
     setProducts([
@@ -26,6 +28,8 @@ const ProductsList = () => {
     setName(product.name);
     setBrand(product.brand);
     setPrice(product.price);
+    setEditMode(true);
+    setSelectdProduct(product);
   };
 
   return (
@@ -77,6 +81,7 @@ const ProductsList = () => {
           type="number"
         />
         <button className="" onClick={addProduct}>
+          {editMode ? "Update" : "Add"}
           Add
         </button>
       </div>
