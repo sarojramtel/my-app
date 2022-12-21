@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { BiEdit } from "react-icons/bi";
+import { PRODUCTS } from "../constants";
 
 const ProductsList = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(PRODUCTS);
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState("");
