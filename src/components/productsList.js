@@ -11,7 +11,7 @@ const ProductsList = () => {
   const [selectedProduct, setSelectdProduct] = useState(null);
   const [editMode, setEditMode] = useState(false);
 
-  const addProduct = () =>
+  const addProduct = () => {
     setProducts([
       ...products,
       {
@@ -21,6 +21,10 @@ const ProductsList = () => {
         id: new Date().getTime(),
       },
     ]);
+    setName("");
+    setBrand("");
+    setPrice("");
+  };
 
   const removeProduct = (selectedId) =>
     setProducts(products.filter((p) => p.id !== selectedId));
