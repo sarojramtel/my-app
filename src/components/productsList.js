@@ -91,7 +91,7 @@ const ProductsList = () => {
           placeholder="Price"
           type="number"
         />
-        <button className="" onClick={addProduct}>
+        <button className="" onClick={editMode ? updateProduct : addProduct}>
           {editMode ? "Update" : "Add"}
         </button>
       </div>
