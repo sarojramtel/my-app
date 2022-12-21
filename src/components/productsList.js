@@ -33,6 +33,16 @@ const ProductsList = () => {
     setSelectdProduct(product);
   };
 
+  const updateProduct = () => {
+    setProducts(
+      products.map((p) =>
+        p.id === selectedProduct.id
+          ? { ...selectedProduct, name, brand, price }
+          : p
+      )
+    );
+  };
+
   return (
     <div>
       <h1>Products List</h1>
@@ -83,7 +93,6 @@ const ProductsList = () => {
         />
         <button className="" onClick={addProduct}>
           {editMode ? "Update" : "Add"}
-          Add
         </button>
       </div>
     </div>
