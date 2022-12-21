@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.product {
+  display: flex;
+  padding: 10px;
+}
+.product .sn {
+  flex-basis: 5%;
+}
+.product .col {
+  flex-basis: 20%;
+}
