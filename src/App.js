@@ -6,10 +6,12 @@ import Counter from "./Counter";
 import { useState } from "react";
 import { BsPlusCircle } from "react-icons/bs";
 import ProductsList from "./components/productsList";
+import Homework from "./components/homework";
 function App() {
   return (
     <div className="App">
       <ProductsList />
+      {/* <Homework /> */}
     </div>
   );
 }

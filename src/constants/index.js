@@ -104,3 +104,54 @@ export const PRODUCTS = [
     id: 1671626107438,
   },
 ];
+
+export const presentationTopic = [
+  {
+    group: "A",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "B",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "C",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "D",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "E",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "F",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "G",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+  {
+    group: "H",
+    groupMembers: [""],
+    topic: "",
+    id: 1,
+  },
+];

@@ -48,3 +48,26 @@
 .product .col {
   flex-basis: 20%;
 }
+
+
+.presentation-topic{
+  display:flex;
+  padding:10px;
+}
+
+.presentation-topic .id{
+  flex-basis: 5%;
+}
+
+.presentation-topic .Group{
+  flex-basis: 5%;
+}
+.presentation-topic .members{
+  flex-basis: 5%;
+}
+.presentation-topic .Topic{
+  flex-basis: 5%;
+}
+.memberinput{
+  display: flex;
+}

@@ -51,6 +51,13 @@ const ProductsList = () => {
     setPrice("");
     setSelectdProduct(null);
   };
+  const cancelEdit = () => {
+    setEditMode(false);
+    setName("");
+    setBrand("");
+    setPrice("");
+    setSelectdProduct(null);
+  };
 
   return (
     <div>
@@ -103,6 +110,11 @@ const ProductsList = () => {
         <button className="" onClick={editMode ? updateProduct : addProduct}>
           {editMode ? "Update" : "Add"}
         </button>
+        {editMode ? (
+          <button className="cancel" onClick={cancelEdit}>
+            cancel
+          </button>
+        ) : null}
       </div>
     </div>
   );
