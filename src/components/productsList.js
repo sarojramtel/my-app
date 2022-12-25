@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { BiEdit } from "react-icons/bi";
 import { PRODUCTS } from "../constants";
+import { toast } from "react-toastify";
 
 const ProductsList = () => {
   const [products, setProducts] = useState(PRODUCTS);
@@ -12,18 +13,23 @@ const ProductsList = () => {
   const [editMode, setEditMode] = useState(false);
 
   const addProduct = () => {
-    setProducts([
-      ...products,
-      {
-        name,
-        brand,
-        price,
-        id: new Date().getTime(),
-      },
-    ]);
-    setName("");
-    setBrand("");
-    setPrice("");
+    if (name === "" || brand === "" || price === "") {
+      toast.error("Fill all the details !!");
+    } else {
+      setProducts([
+        ...products,
+        {
+          name,
+          brand,
+          price,
+          id: new Date().getTime(),
+        },
+      ]);
+      setName("");
+      setBrand("");
+      setPrice("");
+      toast.success(name + " Product added!");
+    }
   };
 
   const removeProduct = (selectedId) =>
@@ -50,6 +56,7 @@ const ProductsList = () => {
     setBrand("");
     setPrice("");
     setSelectdProduct(null);
+    toast.success(name + " Product updated!");
   };
   const cancelEdit = () => {
     setEditMode(false);
@@ -115,6 +122,7 @@ const ProductsList = () => {
             cancel
           </button>
         ) : null}
+        <select closeMenuOnSelect={false} />
       </div>
     </div>
   );

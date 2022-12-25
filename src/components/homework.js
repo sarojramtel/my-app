@@ -7,8 +7,19 @@ const Homework = () => {
   const [presentationTopics, setpresentationTopic] =
     useState(presentationTopic);
   const [group, setGroup] = useState("");
-  const [[], setMembers] = useState("");
+  const [members, setMembers] = useState("");
   const [topic, setTopic] = useState("");
+
+  const assignTopic = () => {
+    setpresentationTopic = [
+      ...presentationTopics,
+      {
+        group,
+        members,
+        topic,
+      },
+    ];
+  };
 
   return (
     <div>
@@ -49,7 +60,7 @@ const Homework = () => {
         <div className="Topics">
           <input name="Topic" placeholder="Topic" />
         </div>
-        <button className="firstbutton" onClick>
+        <button className="firstbutton" onClick={assignTopic}>
           Assign
         </button>
       </div>
