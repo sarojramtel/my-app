@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BsTrash } from "react-icons/bs";
 import { BiEdit } from "react-icons/bi";
 import { PRODUCTS } from "../constants";
@@ -11,6 +11,10 @@ const ProductsList = () => {
   const [price, setPrice] = useState("");
   const [selectedProduct, setSelectdProduct] = useState(null);
   const [editMode, setEditMode] = useState(false);
+
+  const nameRef = useRef(null);
+  const brandRef = useRef(null);
+  const priceRef = useRef(null);
 
   const addProduct = () => {
     if (name === "" || brand === "" || price === "") {
@@ -29,6 +33,7 @@ const ProductsList = () => {
       setBrand("");
       setPrice("");
       toast.success(name + " Product added!");
+      nameRef?.current.focus();
     }
   };
 
@@ -57,6 +62,7 @@ const ProductsList = () => {
     setPrice("");
     setSelectdProduct(null);
     toast.success(name + " Product updated!");
+    nameRef?.current.focus();
   };
   const cancelEdit = () => {
     setEditMode(false);
@@ -96,6 +102,7 @@ const ProductsList = () => {
           name="name"
           id="name"
           value={name}
+          ref={nameRef}
           onChange={(e) => setName(e.target.value)}
           placeholder="Product Name"
         />
