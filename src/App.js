@@ -10,10 +10,16 @@ import Homework from "./components/homework";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
+  const [selectedList, setSelectedList] = useState("");
   return (
     <div className="App">
-      <ProductsList />
-      {/* <Homework /> */}
+      <button onClick={() => setSelectedList("productList")}>
+        Products List
+      </button>
+      <button onClick={() => setSelectedList("homework")}>Homework</button>
+      {selectedList === "productList" && <ProductsList />}
+      {selectedList === "homework" && <Homework />}
+      {selectedList === "" && <h1>Please select any list</h1>}
       <ToastContainer />
     </div>
   );
