@@ -110,6 +110,7 @@ const ProductsList = () => {
           name="brand"
           id="brand"
           value={brand}
+          ref={brandRef}
           onChange={(e) => setBrand(e.target.value)}
           placeholder="Brand"
         />
@@ -117,6 +118,7 @@ const ProductsList = () => {
           name="price"
           id="price"
           value={price}
+          ref={priceRef}
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price"
           type="number"
