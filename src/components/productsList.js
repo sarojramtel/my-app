@@ -104,6 +104,9 @@ const ProductsList = () => {
           value={name}
           ref={nameRef}
           onChange={(e) => setName(e.target.value)}
+          onKeyDown={(e) =>
+            e.code === "Enter" ? brandRef?.current.focus() : void 0
+          }
           placeholder="Product Name"
         />
         <input
